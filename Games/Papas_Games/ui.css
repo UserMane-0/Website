@@ -1,0 +1,115 @@
+:root {
+  --bg-dark: #222;
+  --text-dark: white;
+  --nav-bg-dark: #222;
+  --nav-link-bg-dark: #444;
+  --nav-link-hover-bg-dark: #555;
+  --nav-link-hover-color-dark: #00d4ff;
+
+  --bg-light: #f0f0f0;
+  --text-light: #111;
+  --nav-bg-light: #eee;
+  --nav-link-bg-light: #ddd;
+  --nav-link-hover-bg-light: #ccc;
+  --nav-link-hover-color-light: #0077aa;
+}
+
+html[data-theme="dark"] {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+html[data-theme="light"] {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  /* For your site, not full screen center layout; remove height and flex from previous */
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: "Pixelify Sans", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--nav-bg-dark);
+  padding: 10px 0;
+}
+
+html[data-theme="light"] .navbar {
+  background: var(--nav-bg-light);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 10px 15px;
+  background: var(--nav-link-bg-dark);
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+html[data-theme="light"] .navbar ul li a {
+  color: var(--text-light);
+  background: var(--nav-link-bg-light);
+}
+
+.navbar ul li a:hover {
+  background: var(--nav-link-hover-bg-dark);
+  color: var(--nav-link-hover-color-dark);
+}
+
+html[data-theme="light"] .navbar ul li a:hover {
+  background: var(--nav-link-hover-bg-light);
+  color: var(--nav-link-hover-color-light);
+}
+
+/* Text classes */
+.whitetext {
+  color: var(--text-dark);
+  text-align: center;
+}
+
+html[data-theme="light"] .whitetext {
+  color: var(--text-light);
+}
+
+.pixel-sans {
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.nocopy {
+  user-select: none;
+}
+
+.jaro {
+  font-family: "Jaro", sans-serif;
+}
+
+/* Responsive nav for small screens */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
